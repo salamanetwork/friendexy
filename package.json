@@ -17,9 +17,16 @@
   },
   "homepage": "https://github.com/salamanetwork/friendexy#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
+    "date-time": "^2.1.0",
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "express-flash-notification": "^0.5.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.0",
     "knex": "^0.15.2",
+    "path": "^0.12.7",
     "pg": "^7.4.3"
   }
 }
