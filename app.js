@@ -6,10 +6,12 @@ const bcrypt = require("bcrypt-nodejs");
 const { check, validationResult } = require('express-validator/check');
 const flash = require('express-flash-notification');
 const session = require('express-session');
+
 const db = require('knex')({
   client: 'pg',
+  version: '10.4',
   connection: {
-    host : '127.0.0.1',
+    host : 'localhost',
     user : 'postgres',
     password : 'postgres',
     database : 'friendexy'
@@ -38,12 +40,16 @@ app.use(session({
 
 app.use(flash(app));
 
-app.set("views", "./views");
+app.set("views", "./public/views");
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
 
-  res.send("hello");
+  db.select("*").table("member_info").then(rows => {
+    res.render("pages/index", {
+      rows: rows
+    });
+  });
 });
 
 app.listen(3000, console.log("SERVER RUNNING ON PORT: 3000 ON TIME: " + dn()));
