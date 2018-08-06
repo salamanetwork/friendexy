@@ -47,9 +47,21 @@ app.get("/", (req, res) => {
 
   db.select("*").table("member_info").then(rows => {
     res.render("pages/index", {
-      rows: rows
+      rows: rows,
+      page_title: "Friendexy!"
     });
   });
 });
+
+// app.get("/profile/:id", (req, res) => {
+//   let id = req.params.id;
+//
+//   res.status(200).send(id);
+//   console.log(req.path);
+// });
+
+
+
+
 
 app.listen(3000, console.log("SERVER RUNNING ON PORT: 3000 ON TIME: " + dn()));
