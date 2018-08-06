@@ -1,5 +1,136 @@
+html {
+  overflow: auto;
+}
+
 body{
   margin: 0;
   padding: 0;
   background-color: #DDDDDD;
+  height: 100%;
+  width: 100%;
+}
+
+/* Left: The side navigation menu */
+.sidebar-left {
+  margin: 0 !important;
+  padding: 0;
+  width: 350px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  left: 0;
+}
+
+/* Sidebar links */
+.sidebar-left a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar-left a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar-left a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar-left {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar-left a {float: left;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar-left a {
+    text-align: center;
+    float: none;
+  }
+}
+
+
+/* Right: The side navigation menu */
+.sidebar-right {
+  margin: 0 auto !important;
+  padding: 0;
+  width: 350px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  right: 0;
+}
+
+/* Sidebar links */
+.sidebar-right a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar-right a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar-right a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar-right {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar-right a {float: left;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar-right a {
+    text-align: center;
+    float: none;
+  }
+}
+
+
+/* Customize index card*/
+.index-card {
+    /* Add shadows to create the "card" effect */
+    padding-top: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.index-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.index-card-container {
+    padding: 2px 16px;
+}
+
+.index-card-image {
+  border-radius: 50%;
 }
