@@ -7,16 +7,16 @@ const { check, validationResult } = require('express-validator/check');
 const flash = require('express-flash-notification');
 const session = require('express-session');
 
-const db = require('knex')({
-  client: 'pg',
-  version: '10.4',
-  connection: {
-    host : 'localhost',
-    user : 'postgres',
-    password : 'postgres',
-    database : 'friendexy'
-  }
-});
+// const db = require('knex')({
+//   client: 'pg',
+//   version: '10.4',
+//   connection: {
+//     host : 'localhost',
+//     user : 'postgres',
+//     password : 'postgres',
+//     database : 'friendexy'
+//   }
+// });
 
 const app = express();
 
@@ -45,12 +45,10 @@ app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
 
-  db.select("*").table("member_info").then(rows => {
-    res.render("pages/index", {
-      rows: rows,
+  res.render("pages/index", {
       page_title: "Friendexy!"
-    });
   });
+  
 });
 
 // app.get("/profile/:id", (req, res) => {
