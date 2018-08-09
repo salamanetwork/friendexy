@@ -7,18 +7,10 @@ const { check, validationResult } = require('express-validator/check');
 const flash = require('express-flash-notification');
 const session = require('express-session');
 
-// const db = require('knex')({
-//   client: 'pg',
-//   version: '10.4',
-//   connection: {
-//     host : 'localhost',
-//     user : 'postgres',
-//     password : 'postgres',
-//     database : 'friendexy'
-//   }
-// });
-
 const app = express();
+
+// Get or Set Current Path By req.path
+global.__CURRENT_PATH__ = "";
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
@@ -45,20 +37,14 @@ app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
 
+  __CURRENT_PATH__ = req.path;
+
   res.render("pages/index", {
-      page_title: "Friendexy!"
+    current_path: __CURRENT_PATH__,
+    page_title: "Friendexy!"
   });
-  
+
 });
-
-// app.get("/profile/:id", (req, res) => {
-//   let id = req.params.id;
-//
-//   res.status(200).send(id);
-//   console.log(req.path);
-// });
-
-
 
 
 

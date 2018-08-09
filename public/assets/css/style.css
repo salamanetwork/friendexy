@@ -10,6 +10,12 @@ body{
   width: 100%;
 }
 
+.mid-text {
+  vertical-align: middle;
+  text-align: center;
+  justify-content: center;
+}
+
 /* Left: The side navigation menu */
 .sidebar-left {
   margin: 0 !important;
