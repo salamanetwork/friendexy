@@ -1,0 +1,17 @@
+{
+  "name": "friendexy",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "salamanetwork"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/salamanetwork/friendexy",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
