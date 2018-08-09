@@ -12,6 +12,9 @@ const app = express();
 // Get or Set Current Path By req.path
 global.__CURRENT_PATH__ = "";
 
+// Get or Set Website Main Page Title
+global.__WEBSITE_TITLE__ = "Friendexy!";
+
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.use(bp.urlencoded({extended: true}));
@@ -35,13 +38,26 @@ app.use(flash(app));
 app.set("views", "./public/views");
 app.set("view engine", "ejs");
 
+// Home Page
 app.get("/", (req, res) => {
 
   __CURRENT_PATH__ = req.path;
 
   res.render("pages/index", {
     current_path: __CURRENT_PATH__,
-    page_title: "Friendexy!"
+    page_title: __WEBSITE_TITLE__
+  });
+
+});
+
+// Register/User Page
+app.get("/register/user", (req, res) => {
+
+  __CURRENT_PATH__ = req.path;
+
+  res.render("pages/register_user", {
+    current_path: __CURRENT_PATH__,
+    page_title: __WEBSITE_TITLE__
   });
 
 });
